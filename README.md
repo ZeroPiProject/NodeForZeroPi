@@ -17,7 +17,7 @@ function onStart(){
   setInterval(loop,100);
 }
 ```
-## Python API
+## Node API
 * **zeropi**()
 * **start**()
 
