@@ -1,6 +1,6 @@
 var ZeroPi = require("zeropi").ZeroPi;
-var bot = new ZeroPi();
-bot.stepperStop(1);
+var bot = new ZeroPi(onStart);
+
 var level = 0;
 function loop(){
   level++;
@@ -50,4 +50,7 @@ function loop(){
      break;
    }
 }
-setInterval(loop,2000);
+function onStart(){
+  bot.stepperStop(1);
+  setInterval(loop,2000);
+}

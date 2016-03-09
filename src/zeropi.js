@@ -47,7 +47,7 @@ function onResult(err, results) {
 }
 function write(str){
   if(isOpen){
-    serialPort.write(str+"\n",onResult);
+    serialPort.write("\n"+str+"\n",onResult);
   } 
 }
 ZeroPi.prototype.digitalWrite = function(pin,level){

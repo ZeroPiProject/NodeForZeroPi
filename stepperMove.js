@@ -7,9 +7,9 @@ function onStart(){
 }
 function onForwardMoved(){
   console.log("backword");
-  bot.stepperMove(1,-500,1000,onBackwardMoved);
+  bot.stepperMove(1,-2000,1000,onBackwardMoved);
 }
 function onBackwardMoved(){
 console.log("forword");
-  bot.stepperMove(1,500,1000,onForwardMoved);
+  bot.stepperMove(1,2000,1000,onForwardMoved);
 }

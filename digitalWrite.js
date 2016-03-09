@@ -1,9 +1,11 @@
 var ZeroPi = require("zeropi").ZeroPi;
-var bot = new ZeroPi();
+var bot = new ZeroPi(onStart);
 
 var level = 1;
 function loop(){
   bot.digitalWrite(13,level);
   level = 1-level;
 }
-setInterval(loop,100);
+function onStart(){
+  setInterval(loop,100);
+}
