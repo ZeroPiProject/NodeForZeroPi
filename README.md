@@ -18,14 +18,13 @@ function onStart(){
 }
 ```
 ## Node API
-* **zeropi**()
-* **start**()
+* **ZeroPi**(function onStart)
 
 ### GPIO
 * **digitalWrite** ( Pin, Level ) 
 * **pwmWrite** ( Pin, Pwm )  
-* **digitalRead** ( Pin, **def** onRead )
-* **analogRead** ( Pin, **def** onRead )
+* **digitalRead** ( Pin, **function** onRead )
+* **analogRead** ( Pin, **function** onRead )
  
 ### DC Motor
 * **motorRun** ( Device, Pwm ) 
@@ -42,8 +41,8 @@ function onStart(){
  * Device : 0 ~ 3 ( Slot1~4 )
  * Speed : 0 ~ 20000
 * **stepperStop** ( Device )
-* **stepperMove** ( Device, Distance, Speed, **def** onFinish )
-* **stepperMoveTo** ( Device, Position, Speed, **def** onFinish )
+* **stepperMove** ( Device, Distance, Speed, **function** onFinish )
+* **stepperMoveTo** ( Device, Position, Speed, **function** onFinish )
 * **stepperSetting** ( Device, Microstep, Accelation )
  * Microstep : 1, 2, 4, 8, 16
  * Accelation : 100 ~ 10000
