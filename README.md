@@ -1,5 +1,5 @@
 # Node For ZeroPi
-* prepare your ZeroPi board. ( install the Firmware: https://github.com/ZeroPiProject/ZeroPi_Firmware)
+* prepare your ZeroPi board. ( install the Firmware: https://github.com/ZeroPiProject/ZeroPi_Firmware )
 * git clone https://github.com/ZeroPiProject/NodeForZeroPi on your Raspberry Pi
 * Install using npm, **npm install serialport@2.0.0**
 * Enter the folder "NodeForZeroPi", and **sudo node** digitalWrite.js
@@ -18,7 +18,7 @@ function onStart(){
 }
 ```
 ## Node API
-* **ZeroPi**(function onStart)
+* **ZeroPi**(**function** onStart)
 
 ### GPIO
 * **digitalWrite** ( Pin, Level ) 
