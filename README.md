@@ -1,15 +1,49 @@
 # Node For ZeroPi
+* prepare your ZeroPi board. ( install the Firmware: https://github.com/ZeroPiProject/ZeroPi_Firmware)
+* git clone https://github.com/ZeroPiProject/NodeForZeroPi on your Raspberry Pi
+* Install using npm, **npm install serialport@2.0.0**
+* Enter the folder "NodeForZeroPi", and **sudo node** digitalWrite.js
 
- * Raspberry Pi Linux:
- * Starting with a a vanilla New Out of the Box Software (NOOBS) Raspbian image
- * Log into your Raspberry Pi through whatever means works best and ensure you are on a terminal prompt for the remaining steps. This could be local or  * through an SSH (or a serial connection if you like).
- * Issue the following commands to ensure you are up to date:
-   sudo apt-get update
-   sudo apt-get upgrade -y
- * Download and install node.js:
-   wget https://node-arm.herokuapp.com/node_archive_armhf.deb
-   sudo dpkg -i node_archive_armhf.deb
- * More information can be found at node-arm.
+## Example
+```
+var ZeroPi = require("zeropi").ZeroPi;
+var bot = new ZeroPi(onStart);
+var level = 1;
+function loop(){
+  bot.digitalWrite(13,level);
+  level = 1-level;
+}
+function onStart(){
+  setInterval(loop,100);
+}
+```
+## Python API
+* **zeropi**()
+* **start**()
 
- * Install using npm, note this will take a while as it is actually compiling code and that ARM processor is getting a workout.
-   npm install serialport
+### GPIO
+* **digitalWrite** ( Pin, Level ) 
+* **pwmWrite** ( Pin, Pwm )  
+* **digitalRead** ( Pin, **def** onRead )
+* **analogRead** ( Pin, **def** onRead )
+ 
+### DC Motor
+* **motorRun** ( Device, Pwm ) 
+ * Device : 0 = Slot1( 1A+,1A- ), 1 = Slot1( 1B+,1B- ), ... , 6 = Slot4( 4A+,4A- ), 7 = Slot4( 4B+,4B- )  
+ * Pwm : -255 ~ 255
+
+### Servo Motor
+* **servoRun** ( Pin, Angle)
+ * Pin : 0 - 8 ( A0, A1, A2, A3, MO, MI, SCK, SDA, SCL )
+ * Angle : 0 ~ 180
+
+### Stepper Motor
+* **stepperRun**( Device, Speed )
+ * Device : 0 ~ 3 ( Slot1~4 )
+ * Speed : 0 ~ 20000
+* **stepperStop** ( Device )
+* **stepperMove** ( Device, Distance, Speed, **def** onFinish )
+* **stepperMoveTo** ( Device, Position, Speed, **def** onFinish )
+* **stepperSetting** ( Device, Microstep, Accelation )
+ * Microstep : 1, 2, 4, 8, 16
+ * Accelation : 100 ~ 10000
