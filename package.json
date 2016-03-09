@@ -1,0 +1,28 @@
+{
+  "name": "zeropi",
+  "version": "0.0.1",
+  "description": "node for zeropi firmware",
+  "main": "digitalWrite.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZeroPiProject/NodeForZeroPi"
+  },
+  "keywords": [
+    "zero",
+    "pi",
+    "raspberry",
+    "pi"
+  ],
+ "dependencies" :
+  { 
+	"serialport" : "=2.0.2"
+  },
+  "author": "ander@makeblock.cc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeroPiProject/NodeForZeroPi/issues"
+  }
+}
